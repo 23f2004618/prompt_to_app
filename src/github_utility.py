@@ -27,6 +27,7 @@ def get_authenticated_username():
 def create_repo(repo_name: str, description: str = ""):
     """Create or fetch a public repository."""
     user = g.get_user()
+    description = " ".join(description.split()[:340]) + ("..." if len(description.split()) > 340 else "")
     try:
         repo = user.get_repo(repo_name)
         print("Repo already exists:", repo.full_name)
