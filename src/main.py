@@ -511,7 +511,7 @@ def process_request(data):
         print("Attachments saved:", saved_attachments)
 
         # Step 1: Get or create repo early
-        repo = create_repo(task_id, description=f"Auto-generated app for task: {data['brief']}")
+        repo = create_repo(task_id, description=f"Auto-generated app from LLM Prompt")
         
         # If repo was just created with auto_init, wait for GitHub to initialize it
         if round_num == 1:
